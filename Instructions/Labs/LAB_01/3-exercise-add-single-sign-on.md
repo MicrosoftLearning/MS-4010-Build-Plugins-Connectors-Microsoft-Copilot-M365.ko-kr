@@ -20,7 +20,7 @@ Visual Studio에서:
     ```json
     "identifierUris": [
         "api://${{BOT_DOMAIN}}/botid-${{BOT_ID}}"
-    ]
+    ],
     ```
 
 1. 파일에서 **oauth2Permissions** 배열을 업데이트하여 Teams에서 웹 API를 관리자 또는 사용자로 호출할 수 있도록 범위를 만듭니다.
@@ -86,7 +86,7 @@ Visual Studio에서:
             "${{AAD_APP_ACCESS_AS_USER_PERMISSION_ID}}"
           ]
         }
-      ]
+      ],
     ```
 
 1. 변경 내용을 저장합니다.
@@ -96,13 +96,13 @@ Visual Studio에서:
 Visual Studio에서 다음을 테스트합니다.
 
 1. **appPackage** 폴더에서 **manifest.json** 파일을 엽니다.
-1.  파일에서 다음 코드를 추가합니다.
+1. 파일에서 **설명** 뒤에 다음 코드를 추가합니다.
 
     ```json
     "webApplicationInfo": {
       "id": "${{BOT_ID}}",
       "resource": "api://${{BOT_DOMAIN}}/botid-${{BOT_ID}}"
-    }
+    },
     ```
 
 1. 변경 내용을 저장합니다.
@@ -500,7 +500,7 @@ Visual Studio에서 다음을 테스트합니다.
 
 Visual Studio에서 다음을 테스트합니다.
 
-1. **솔루션 탐색기**에서 **MsgExtProductSupport** 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
+1. **솔루션 탐색기**에서 **TeamsApp** 프로젝트를 마우스 오른쪽 단추로 클릭합니다.
 1. **Teams Toolkit** 메뉴를 확장하고 **Teams 앱 종속성 준비**를 선택합니다.
 1. **Microsoft 365 계정** 대화 상자에서 **계속**을 선택합니다.
 1. **프로비전** 대화 상자에서 **프로비전**을 선택합니다.
@@ -522,17 +522,12 @@ Visual Studio에서 다음을 테스트합니다.
 1. 메시지 작성 영역에서 **...** 를 선택하여 앱 플라이아웃을 엽니다.
 1. 앱 목록에서 **Contoso 제품**을 선택하여 메시지 확장을 엽니다.
 1. 텍스트 상자에 **Bot Builder**를 입력하여 검색을 시작합니다.
-1. 결과 목록에서 **결과를 선택**하여 메시지 작성 상자에 카드를 포함합니다.
 1. **이 앱을 사용하려면 로그인해야 합니다.** 라는 메시지가 표시됩니다.
 1. **로그인 링크**를 선택하여 새 탭을 열고 인증 흐름을 시작합니다.
 1. 사용 권한 동의 페이지에서 요청되는 사용 권한을 검토합니다.
-1. *수락*을 선택한 후 탭을 닫고 Microsoft Teams로 돌아갑니다.
-1. 메시지 작성 영역에서 **...** 를 선택하여 앱 플라이아웃을 엽니다.
-1. 앱 목록에서 **Contoso 제품**을 선택하여 메시지 확장을 엽니다.
-1. 텍스트 상자에 **Bot Builder**를 입력하여 검색을 시작합니다.
-1. 다시 로그인하라는 메시지가 나타납니다. 다시 **로그인 링크**를 따라 검색을 시작합니다.
-1. 결과 목록에서 **결과를 선택**하여 메시지 작성 상자에 카드를 포함합니다.
+1. **수락**을 선택한 후 탭을 닫고 Microsoft Teams로 돌아갑니다.
+1. 결과 목록에서 **결과를 선택하여** 메시지 작성 상자에 카드를 포함하고 보냅니다.
 
 디버깅 세션을 중지하는 브라우저입니다.
 
-[이 연습의 다음 단계를 계속 진행합니다...](./4-exercise-retrieve-product-information-from-sharepoint-online.md)
+[ 다음 연습으로 계속...](./4-exercise-retrieve-product-information-from-sharepoint-online.md)
