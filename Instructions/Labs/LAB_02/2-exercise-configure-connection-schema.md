@@ -19,8 +19,8 @@ lab:
 웹 브라우저에서:
 
 1. [https://portal.azure.com](https://portal.azure.com)에서 **Azure Portal**로 이동합니다.
-1. 왼쪽 탐색 창에서 **Microsoft Entra ID**를 선택합니다.
-1. 왼쪽 탐색 창에서 **앱 등록**을 선택합니다.
+1. 탐색에서 **Microsoft Entra ID** 아래의 **보기**를 선택합니다.
+1. 측면 탐색에서 **관리**를 펼쳐 **앱 등록**을 선택합니다.
 1. 상단 탐색 창에서 **새 등록**을 선택합니다.
 1. 다음 값 중 하나를 지정합니다.
    1. **이름:** MSGraph docs Graph 커넥터
@@ -34,8 +34,9 @@ lab:
 
 웹 브라우저에서 계속합니다:
 
-1. 측면 탐색 창에서 **인증서 및 암호**를 선택합니다.
-1. **클라이언트 암호** 탭을 활성화하고 **새 클라이언트 암호** 버튼을 선택합니다.
+1. 측면 탐색에서 **관리**를 펼쳐 **인증서 및 암호**를 선택합니다.
+1. **클라이언트 암호** 탭을 선택한 다음, **새 클라이언트 암호**를 선택합니다.
+1. **MSGraph docs Graph 커넥터 암호**에 대한 **설명**을 입력합니다.
 1. **추가**를 선택하여 암호를 만듭니다.
 1. 새로 만든 암호의 **값**을 복사합니다. 나중에 필요합니다.
 
@@ -60,11 +61,12 @@ Entra 앱 등록을 구성하는 마지막 단계는 외부 연결 및 스키마
 
 Entra 앱 등록을 구성한 후 다음 단계는 Graph 커넥터의 코드를 구현하는 콘솔 앱을 만드는 것입니다.
 
-터미널에서:
+Windows 터미널을 열어 새 콘솔 애플리케이션을 만듭니다.
 
-1. 새 폴더를 만들고 작업 디렉터리를 해당 새 폴더로 변경합니다.
+1. 입력하여 새 폴더를 만든 다음, `mkdir documents\console_app`입력하여 새 폴더로 이동합니다.`cd .\documents\console_app`
 1. `dotnet new console`을 실행하여 새 콘솔 애플리케이션을 만듭니다.
 1. 커넥터를 빌드하는 데 필요한 종속성을 추가합니다.
+   1. 패키지 원본으로 Nuget.org 추가하고 실행합니다. `dotnet nuget add source https://api.nuget.org/v3/index.json -n nuget.org` 
    1. Microsoft 365를 사용하여 인증하는 데 필요한 라이브러리를 추가하려면 `dotnet add package Azure.Identity`를 실행합니다.
    1. Graph API와 통신할 클라이언트 라이브러리를 추가하려면 `dotnet add package Microsoft.Graph`를 실행합니다.
    1. 다음 단계에서 구성할 사용자 암호를 사용하는 데 필요한 라이브러리를 추가하려면 `dotnet add package Microsoft.Extensions.Configuration.UserSecrets`를 실행합니다.
@@ -88,9 +90,9 @@ Entra 앱 등록을 생성한 후 애플리케이션 및 테넌트 ID, 비밀번
 
 ## 작업 6 - Microsoft Graph 클라이언트 만들기
 
-사용자 지정 Graph 커넥터는 Microsoft 그래프 API를 사용하여 외부 연결 및 -아이템을 관리합니다. 프로젝트에 설치한 **Microsoft.Graph** NuGet 패키지에서 `GraphServiceClient` 클래스의 인스턴스를 생성하여 시작합니다.
+사용자 지정 Graph 커넥터는 Microsoft Graph API를 사용하여 외부 연결 및 아이템을 관리합니다. 프로젝트에 설치한 **Microsoft.Graph** NuGet 패키지에서 `GraphServiceClient` 클래스의 인스턴스를 생성하여 시작합니다.
 
-1. 코드 편집기에서 프로젝트를 엽니다.
+1. Visual Studio 2022에서 프로젝트를 엽니다.
 1. 프로젝트에 ** GraphService.cs** 라는 새 코드 파일을 추가합니다.
 1. 파일에 다음을 추가하여 사용할 네임스페이스에 대한 참조를 추가하는 것으로 시작합니다:
 
@@ -141,7 +143,7 @@ Entra 앱 등록을 생성한 후 애플리케이션 및 테넌트 ID, 비밀번
    }
    ```
 
-1. 이전에 저장한 Entra 앱 등록 정보를 자격 증명으로 사용하여 `GraphServiceClient`의 새 인스턴스를 생성합니다:
+1. 내부에 들어가면 이전에 저장한 Entra 앱 등록 정보를 자격 증명으로 사용하여 `GraphServiceClient`의 새 인스턴스를 생성합니다.
 
    ```csharp
    var builder = new ConfigurationBuilder().AddUserSecrets<GraphService>();
@@ -174,7 +176,7 @@ Entra 앱 등록을 생성한 후 애플리케이션 및 테넌트 ID, 비밀번
        {
          if (_client is null)
          {
-           var builder = new ConfigurationBuilder().   AddUserSecrets<GraphService>();
+           var builder = new ConfigurationBuilder().AddUserSecrets<GraphService>();
            var config = builder.Build();
      
            var clientId = config["EntraId:ClientId"];
@@ -226,7 +228,7 @@ Entra 앱 등록을 생성한 후 애플리케이션 및 테넌트 ID, 비밀번
        {
          Id = "msgraphdocs",
          Name = "Microsoft Graph documentation",
-         Description = "Documentation for Microsoft Graph API which    explains what Microsoft Graph is and how to use it."
+         Description = "Documentation for Microsoft Graph API which explains what Microsoft Graph is and how to use it."
        };
      }
    }
@@ -389,6 +391,7 @@ Entra 앱 등록을 생성한 후 애플리케이션 및 테넌트 ID, 비밀번
    ```csharp
    async static Task CreateConnection()
    {
+
    }
    ```
 

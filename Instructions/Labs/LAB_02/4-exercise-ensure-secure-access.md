@@ -64,12 +64,12 @@ static IEnumerable<ExternalItem> Transform(IEnumerable<DocsArticle> content)
 웹 브라우저에서:
 
 1. [https://portal.azure.com](https://portal.azure.com)에서 Azure Portal로 이동하고 회사 또는 학교 계정으로 로그인합니다.
-1. 사이드바에서 **Microsoft Entra ID**를 선택합니다.
-1. 탐색 창에서 **사용자**를 선택합니다.
+1. 사이드바에서 **Microsoft Entra ID** 아래의 **보기**를 선택합니다.
+1. 탐색에서 **사용자** > **관리**를선택합니다.
 1. 사용자 목록에서 이름을 선택하여 사용자 중 하나를 엽니다.
 1. **개체 ID** 속성 값을 복사합니다.
 
-   :::image type="content" source="../media/8-user.png" alt-text="사용자 프로필이 열려 있는 Azure Portal의 스크린샷":::
+  ![사용자 프로필이 열려 있는 Azure Portal의 스크린샷](../media/8-user.png)
 
 이 값을 사용하여 특정 Markdown 페이지에 대한 새 ACL을 정의합니다.
 
@@ -188,15 +188,7 @@ static IEnumerable<ExternalItem> Transform(IEnumerable<DocsArticle> content)
 
 이제 선택한 사용자 그룹에서만 다른 페이지에 액세스할 수 있도록 코드를 확장해 보겠습니다.
 
-웹 브라우저에서:
-
-1. [https://portal.azure.com](https://portal.azure.com)에서 Azure Portal로 이동하고 회사 또는 학교 계정으로 로그인합니다.
-1. 사이드바에서 **Microsoft Entra ID**를 선택합니다.
-1. 탐색 창에서 **그룹**을 선택합니다.
-1. 그룹 목록에서 이름을 선택하여 그룹 중 하나를 엽니다.
-1. **개체 ID** 속성 값을 복사합니다.
-
-:::image type="content" source="../media/8-group.png" alt-text="그룹 페이지가 열려 있는 Azure Portal의 스크린샷":::
+![그룹 페이지가 열려 있는 Azure Portal의 스크린샷](../media/8-group.png)
 
 이 값을 사용하여 특정 Markdown 페이지에 대한 새 ACL을 정의합니다.
 

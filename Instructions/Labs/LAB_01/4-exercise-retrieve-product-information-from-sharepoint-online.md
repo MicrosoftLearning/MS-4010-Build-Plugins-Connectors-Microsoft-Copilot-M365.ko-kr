@@ -8,7 +8,7 @@ lab:
 
 이 연습에서는 제품 정보를 목록의 항목으로 저장하는 SharePoint 온라인 사이트를 프로비저닝하고 구성합니다. Microsoft Graph SDK를 사용하여 SharePoint Online에서 목록 항목을 검색하고 검색 결과에서 목록 항목 데이터를 반환하려면 메시지 확장 코드를 업데이트합니다. 마지막으로 메시지 확장을 실행 및 디버그하고 Microsoft Teams에서 테스트합니다.
 
-:::image type="content" source="../media/4-search-results-sharepoint-online.png" alt-text=" Microsoft Teams의 검색 기반 메시지 확장 프로그램에서 반환된 검색 결과 스크린샷입니다. 검색 결과는 SharePoint Online에서 반환됩니다. 각 검색 결과에는 제품 이름, 카테고리 및 제품 이미지가 표시됩니다." lightbox="../media/4-search-results-sharepoint-online.png":::
+![Microsoft Teams의 검색 기반 메시지 확장 프로그램에서 반환된 검색 결과의 스크린샷 검색 결과는 SharePoint Online에서 반환됩니다. 각 검색 결과에는 제품 이름, 범주 및 제품 이미지가 표시됩니다.](../media/4-search-results-sharepoint-online.png)
 
 ## 작업 1 - 제품 마케팅 SharePoint 사이트 프로비저닝 및 구성
 
@@ -26,7 +26,7 @@ lab:
 
 사이트 프로비저닝이 완료되면 회원님의 이메일 주소로 이메일이 전송되어 이를 알려드립니다. 이 프로세스를 완료하는 데 몇 분이 걸릴 수 있습니다.
 
-:::image type="content" source="../media/1-sharepoint-online-product-support-site.png" alt-text=" 제품 지원 SharePoint 온라인 팀 사이트의 홈페이지 스크린샷입니다. 최근에 출시된 제품 목록이 표시됩니다." lightbox="../media/1-sharepoint-online-product-support-site.png":::
+![제품 지원 SharePoint 온라인 팀 사이트의 홈페이지 스크린샷입니다. 최근에 릴리스된 제품 목록이 표시됩니다.](../media/1-sharepoint-online-product-support-site.png)
 
 Microsoft Graph API를 사용하여 목록을 쿼리할 때 제목 및 소매 카테고리 열에서 필터링을 사용하려면 목록에 인덱스를 생성합니다.
 
