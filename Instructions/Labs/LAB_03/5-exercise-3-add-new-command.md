@@ -46,19 +46,27 @@ lab:
    ```
 
 > [!NOTE] 
-> **ID**는 UI와 코드 간의 연결입니다. 이 값은 **discount/product/SearchCommand.ts**파일에서 **COMMAND_ID**로 정의됩니다. 이러한 각 파일에 **ID** 값에 해당하는 고유한 **COMMAND_ID**를 부여하는 방법을 알아봅니다.
+> **ID**는 UI와 코드 간의 연결입니다. 이 값은 **discount\product\SearchCommand.ts**파일에서 **COMMAND_ID**로 정의됩니다. 이러한 각 파일에 **ID** 값에 해당하는 고유한 **COMMAND_ID**를 부여하는 방법을 알아봅니다.
 
 ## 작업 2 - 'companySearch' 명령에 대한 처리기 만들기
 
 이 연습에서는 기존 코드 중 일부를 복사하여 명령에 대한 새 처리기를 만듭니다. 
 
-1. Visual Studio Code에서 '**productSearchCommand.ts**'을 복사하고 같은 폴더에 붙여넣어 복사본을 만듭니다. 이 파일의 이름을 **customerSearchCommand.ts**로 바꿉니다.
+1. **작업 디렉터리** 아래의 Visual Studio Code에서 **.\src\messageExtensions**로 이동하여 '**productSearchCommand.ts**'를 복사하고 같은 폴더에 붙여넣어 복사본을 만듭니다. 이 파일의 이름을 **customerSearchCommand.ts**로 바꿉니다.
+
+1. 7행을 다음으로 변경합니다.
+
+    ```typescript
+    import { searchProductsByCustomer } from "../northwindDB/products";
+    ```
 
 1. 10행을 다음으로 변경합니다.
 
    ```javascript
    const COMMAND_ID = "companySearch";
    ```
+
+
 
 1. **handleTeamsMessagingExtensionQuery**의 콘텐츠를 다음으로 바꿉니다.
 

@@ -82,18 +82,11 @@ lab:
 
 이 작업을 일찍 수행하면 Microsoft 365 검색 엔진에서 검색을 할 준비가 되었을 때 이미 그 항목을 발견할 가능성이 높습니다.
 
-## 작업 4 - Visual Studio Code용 Teams 도구 키트 설치 및 설정
+## 작업 4 - Visual Studio Code용 Teams 도구 키트 구성
 
 이 작업에서는 [Visual Studio Code용 Teams 도구 키트](https://learn.microsoft.com/microsoftteams/platform/toolkit/teams-toolkit-fundamentals?pivots=visual-studio-code-v5)의 현재 버전을 설치합니다. 이 작업을 수행하는 가장 쉬운 방법은 Visual Studio Code 내에서 바로 시작하는 것입니다.
 
-> [!NOTE]
-> 시험판 버전은 이 랩에서 테스트되지 않았으므로 설치하지 마세요.
-
 1. Visual Studio Code에서 **작업 폴더** 열기 이 폴더의 작성자를 신뢰하라는 메시지가 표시될 수 있습니다. 그렇다면 수행하세요.
-
-1. 왼쪽 사이드바에서 **확장** 1️⃣ 을 선택합니다. 검색 상자 2️⃣ 에 **Teams**라는 단어를 입력하고 검색 결과에서 **Teams 도구 키트**를 찾습니다. **설치** 3️⃣ 를 선택합니다.
-
-    ![Visual Studio Code에서 Teams 도구 키트를 설치하는 스크린샷](../media/1-04-install-teams-toolkit-01.png)
 
 1. 이제 왼쪽에 있는 **Teams 도구 키트** 아이콘 1️⃣ 을 선택합니다. 새 프로젝트를 만드는 옵션이 제공된다면 잘못된 폴더에 있는 것일 수 있습니다. **Visual Studio Code 파일 메뉴**에서 **폴더 열기**를 선택하고 **msgext-northwind-inventory-ts** 폴더를 직접 엽니다. 아래와 같이 계정, 환경 등에 대한 섹션이 표시됩니다.
 
@@ -103,7 +96,7 @@ lab:
 
 1. 브라우저 창이 열리고 Microsoft 365에 로그인할 수 있습니다. **지금 로그인한 상태이며 이 페이지를 닫습니다**라고 표시되면 닫으세요.
 
-1. 마지막으로 **테스트용 로드 활성화** 옆에 녹색 체크 표시가 나타나는지 확인합니다. 그렇지 않은 경우 사용자 계정에 Teams 애플리케이션을 업로드할 수 있는 권한이 없다는 의미입니다. 이 권한은 기본적으로 꺼져 있습니다. [사용자가 사용자 지정 앱을 업로드할 수 있도록 설정하는 방법](https://learn.microsoft.com/microsoftteams/teams-custom-app-policies-and-settings#allow-users-to-upload-custom-apps)은 다음과 같습니다.
+1. 마지막으로 **사용자 지정 앱 업로드 활성화됨** 옆에 녹색 체크 표시가 나타나는지 확인합니다. 그렇지 않은 경우 사용자 계정에 Teams 애플리케이션을 업로드할 수 있는 권한이 없다는 의미입니다. 이 권한은 기본적으로 꺼져 있습니다. [사용자가 사용자 지정 앱을 업로드할 수 있도록 설정하는 방법](https://learn.microsoft.com/microsoftteams/teams-custom-app-policies-and-settings#allow-users-to-upload-custom-apps)은 다음과 같습니다.
 
     ![테스트용 로드가 활성화되어 있는지 확인하는 스크린샷](../media/1-04-setup-teams-toolkit-03.png)
 

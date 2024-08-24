@@ -34,7 +34,7 @@ SECRET_STORAGE_ACCOUNT_CONNECTION_STRING=UseDevelopmentStorage=true
 
 ## 작업 2 - 로컬에서 애플리케이션 실행하기
 
-1. **작업 폴더**가 열려 있는 Visual Studio Code에서 **F5** 키를 눌러 디버깅을 시작하거나 시작 단추 1️⃣를 선택합니다. 
+1. **작업 폴더**가 열려 있는 Visual Studio Code에서 **F5** 키를 눌러 디버깅을 시작하거나 시작 단추 1️⃣를 선택합니다.
 
 1. **Teams(Edge)에서 디버그** 2️⃣를 선택합니다.
 
@@ -180,9 +180,9 @@ name,category,inventoryStatus,supplierCity,supplierName
 
 - **_c,bev_** - **bev**로 시작하는 범주의 제품 및 **c**로 시작하는 이름을 찾습니다.
 
-- **_,,out_** - 재고가 없는 제품을 찾습니다.
+- **_,,out,_** - 재고가 없는 제품을 찾습니다.
 
-- **_,,on,London_** - London의 공급 업체에서 주문하는 제품을 찾습니다.
+- **_,,in,London_** - London의 공급 업체에서 주문하는 제품을 찾습니다.
 
 - **_tofu,produce,,Osaka_** - **produce**범주에서 **Osaka**의 공급 업체와 **tofu**로 시작하는 이름의 제품을 찾을 수 있습니다.
 
@@ -200,7 +200,7 @@ Microsoft Outlook에서 메시지 확장이 작동하는 방식을 확인할 수
 
     ![Outlook에서 새 이메일을 작성하는 스크린샷.](../media/2-04-test-message-extension-outlook-02.png)
 
-1. **받는 사람** 1️⃣ 및 **주제** 2️⃣를 추가한 다음 메세지 3️⃣의 본문에 커서를 놓습니다. 또한 기타 내용을 입력할 수도 있습니다. 준비가 되면 도구 모음 4️⃣ 에서 **앱 버튼**을 선택합니다.
+1. **받는 사람** 1️⃣ 및 **주제** 2️⃣를 추가한 다음 메세지 3️⃣의 본문에 커서를 놓습니다. 또한 기타 내용을 입력할 수도 있습니다. 준비가 되면 도구 모음에서 **삽입**을 선택하고 도구 모음 4️⃣에서 **앱**을 선택합니다.
 
     ![Outlook 메시지를 작성하는 동안 앱 버튼을 선택하는 스크린샷.](../media/2-04-test-message-extension-outlook-03.png)
 

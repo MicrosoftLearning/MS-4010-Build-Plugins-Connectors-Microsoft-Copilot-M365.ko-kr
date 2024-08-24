@@ -16,7 +16,7 @@ lab:
 
 이 연습을 수행하려면 [GitHub](https://pnp.github.io/download-partial/?url=https://github.com/pnp/graph-connectors-samples/tree/main/samples/dotnet-csharp-graphdocs/content)에서 이 연습에 사용된 샘플 콘텐츠 파일을 복사하여 프로젝트의 **콘텐츠**라는 폴더에 저장합니다.
 
-:::image type="content" source="../media/6-content-files.png" alt-text="이 연습에 사용된 콘텐츠 파일을 보여 주는 코드 편집기의 스크린샷":::
+![이 연습에 사용된 콘텐츠 파일을 보여 주는 코드 편집기의 스크린샷](../media/6-content-files.png)
 
 코드가 제대로 작동하려면 **콘텐츠** 폴더와 해당 내용을 빌드 출력 폴더에 복사해야 합니다.
 
