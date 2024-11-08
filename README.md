@@ -1,4 +1,4 @@
-# INF99X: 샘플 과정
+# MS-4010: Microsoft 365용 Microsoft Copilot에서 플러그인 및 커넥터 빌드
 
 **MCT이신가요?** - [MCT를 위한 GitHub 사용자 가이드](https://microsoftlearning.github.io/MCT-User-Guide/)를 살펴보세요.
 
