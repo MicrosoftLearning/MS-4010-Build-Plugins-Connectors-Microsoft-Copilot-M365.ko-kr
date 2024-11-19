@@ -1,7 +1,7 @@
 ---
 lab:
   title: 연습 1 - 메시지 확장 프로그램 만들기
-  module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+  module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # 연습 1 - 메시지 확장 프로그램 만들기

@@ -1,7 +1,7 @@
 ---
 lab:
   title: 연습 2 - Single Sign-On 추가
-  module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+  module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
 # 연습 2 - Single Sign-On 추가
@@ -244,7 +244,7 @@ Visual Studio 및 **TeamsApp** 프로젝트에서 계속 진행합니다.
 
 1. **검색** 폴더에서 **SearchApp.cs**를 엽니다.
 
-1. **SearchApp** 클래스의 시작 부분에서 **IConfiguration** 개체를 수락하고 **CONNECTION_NAME** 속성 값을 **connectionName**이라는 프라이빗 필드에 할당하는 생성자를 만듭니다.
+1. **SearchApp** 클래스의 시작 부분(약 14줄)에서 **IConfiguration** 개체를 수락하고 **CONNECTION_NAME** 속성 값을 **connectionName**이라는 프라이빗 필드에 할당하는 생성자를 만듭니다.
 
     ```csharp
     private readonly string connectionName;
