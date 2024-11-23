@@ -1,12 +1,12 @@
 ---
 lab:
   title: 연습 3 - 새 명령 추가
-  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # 연습 3 - 새 명령 추가
 
-이 연습에서는 새 명령을 추가하여 Teams 메시지 확장 및 Copilot 플러그 인을 향상시킵니다. 현재 메시지 확장은 Northwind 인벤토리 데이터베이스 내의 제품에 대한 정보를 효과적으로 제공하지만 Northwind의 고객과 관련된 정보는 제공하지 않습니다. 사용자가 지정한 고객 이름으로 주문한 제품을 검색하는 API 호출과 연결된 새 명령을 소개합니다. 이 연습에서는 적어도 연습 1, 2 및 3을 완료한 것으로 가정합니다. Microsoft 365용 Copilot 라이선스가 없는 경우 연습 4를 건너뛰어도 괜찮습니다.
+이 연습에서는 새 명령을 추가하여 Teams 메시지 확장 및 Copilot 플러그 인을 향상시킵니다. 현재 메시지 확장은 Northwind 인벤토리 데이터베이스 내의 제품에 대한 정보를 효과적으로 제공하지만 Northwind의 고객과 관련된 정보는 제공하지 않습니다. 사용자가 지정한 고객 이름으로 주문한 제품을 검색하는 API 호출과 연결된 새 명령을 소개합니다. 이 연습에서는 적어도 연습 1, 2 및 3을 완료한 것으로 가정합니다. Microsoft 365 Copilot 라이선스가 없는 경우 연습 4를 건너뛰어도 괜찮습니다.
 
 이 작업을 완수하려면 다음 작업을 수행합니다.
 
@@ -232,7 +232,7 @@ lab:
 
 ## 작업 5 - 앱 실행하기! 회사 이름으로 제품 검색
 
-이제 Microsoft 365용 Copilot용 플러그 인으로 샘플을 테스트할 준비가 되었습니다.
+이제 Microsoft 365 Copilot용 플러그 인으로 샘플을 테스트할 준비가 되었습니다.
 
 1. Teams에서 **Northwest 인벤토리** 앱을 제거합니다. 매니페스트를 업데이트하기 때문에 이 작업이 필요합니다. 매니페스트 업데이트를 사용하려면 앱을 다시 설치해야 합니다. 이 작업을 수행하는 가장 깔끔한 방법은 먼저 Teams에서 제거하는 것입니다.
 

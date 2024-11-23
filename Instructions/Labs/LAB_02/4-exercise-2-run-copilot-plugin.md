@@ -1,17 +1,17 @@
 ---
 lab:
   title: 연습 2 - Copilot 플러그 인으로 샘플 실행
-  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # 연습 2 - Copilot 플러그 인으로 샘플 실행
 
-이 연습에서는 Microsoft 365용 Microsoft Copilot 플러그 인으로 애플리케이션을 실행합니다. 다양한 프롬프트로 실험하고 여러 매개 변수를 사용하여 플러그인이 호출되는 방식을 관찰합니다.
+이 연습에서는 Microsoft 365 Copilot 플러그 인으로 애플리케이션을 실행합니다. 다양한 프롬프트로 실험하고 여러 매개 변수를 사용하여 플러그인이 호출되는 방식을 관찰합니다.
 
 > [!NOTE]  
-> 다음 연습을 수행하려면 계정에 Microsoft 365용 Copilot에 대한 유효한 라이선스가 있어야 합니다.
+> 다음 연습을 수행하려면 계정에 Microsoft 365 Copilot에 대한 유효한 라이선스가 있어야 합니다.
 
-## 작업 1 - Microsoft 365용 Microsoft Copilot에서 테스트(단일 매개 변수)
+## 작업 1 - Microsoft 365 Copilot에서 테스트(단일 매개 변수)
 
 1. 왼쪽의 애플리케이션 레일에서 **Copilot** 앱을 선택합니다.
 
@@ -45,7 +45,7 @@ Northwind 데이터의 인용은 3가지 형식으로 표시될 수 있습니다
 
 자신의 프롬프트를 자유롭게 만들 수 있습니다. Copilot이 필요한 정보를 플러그 인에 쿼리할 수 있는 경우에만 작동한다는 것을 알 수 있습니다. 이는 사용자가 실행할 프롬프트 종류를 예측하고 각 프롬프트에 해당하는 유형의 쿼리를 제공해야 하는 필요성을 강조합니다. 매개 변수가 여러 개 있으면 이 기능을 더욱 강력하게 만들 수 있습니다.
 
-## 작업 2 - Microsoft 365용 Microsoft Copilot에서 테스트(다중 매개 변수)
+## 작업 2 - Microsoft 365 Copilot에서 테스트(다중 매개 변수)
 
 이 연습에서는 샘플 플러그 인에서 다중 매개 변수 기능을 연습하는 몇 가지 프롬프트를 시도합니다. 이러한 프롬프트는 **앱 매니페스트**에 정의된 대로 **이름**, **범주**, **인벤토리 상태**, **공급업체 도시** 및 **재고 수준**으로 검색할 수 있는 데이터를 요청합니다.
 
@@ -111,7 +111,7 @@ Northwind 데이터의 인용은 3가지 형식으로 표시될 수 있습니다
 
 ## 작업 확인
 
-이 연습의 작업을 완료한 후에는 Microsoft 365용 코필로트에서 **Northwind 인벤토리** 플러그 인을 사용할 수 있어야 합니다. 
+이 연습의 작업을 완료한 후에는 Microsoft 365 Copilot에서 **Northwind 인벤토리** 플러그 인을 사용할 수 있어야 합니다. 
 
 이 연습이 완료되면 플러그 인 기능을 확장하고 더 많은 작업을 수행할 수 있도록 메시징 확장에 새 명령을 추가할 준비가 된 것입니다. 
 

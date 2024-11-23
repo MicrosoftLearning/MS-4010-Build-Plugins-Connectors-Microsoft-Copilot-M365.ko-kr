@@ -1,7 +1,7 @@
 ---
 lab:
   title: 연습 1 - 샘플 메시지 확장으로 실행
-  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # 연습 1 - 샘플 메시지 확장으로 실행
@@ -234,6 +234,6 @@ Northwind 데이터베이스는 화려하지 않지만 진짜입니다! 데이�
 
 이 연습의 모든 작업을 수행한 후에는 Teams 또는 Outlook용 Microsoft 365 플러그인으로 사용할 수 있는 메시지 확장 응용 프로그램이 작동해야 합니다.
 
-모든 것이 작동하면 **Microsoft Copilot for Microsoft 365**에서 샘플 애플리케이션을 실행할 준비가 된 것입니다! 
+모든 것이 작동하면 **Microsoft 365 Copilot**에서 응용 프로그램 예제를 실행할 준비가 된 것입니다! 
 
 [다음 연습을 계속 진행합니다...](./4-exercise-2-run-copilot-plugin.md)

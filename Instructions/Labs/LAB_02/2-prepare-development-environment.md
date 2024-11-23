@@ -1,7 +1,7 @@
 ---
 lab:
   title: 개발 환경 준비
-  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
 ---
 
 # 개발 환경 준비
@@ -11,7 +11,7 @@ lab:
 ## 작업 1: 필수 구성 요소 설치
 
 > [!IMPORTANT]
-> 이 프로젝트를 성공적으로 완료하려면 애플리케이션 업로드 권한이 있는 Microsoft 365 계정이 필요합니다. **연습 2**를 완료하려면 계정에 Microsoft 365용 Microsoft Copilot에 대한 라이선스도 있어야 합니다.
+> 이 프로젝트를 성공적으로 완료하려면 애플리케이션 업로드 권한이 있는 Microsoft 365 계정이 필요합니다. **연습 2**를 완료하려면 계정에 Microsoft 365 Copilot에 대한 라이선스도 있어야 합니다.
 
 새 테넌트를 사용하는 경우 시작하기 전에 [https://office.com](https://office.com)에서 Microsoft 365 페이지에 [로그인](https://office.com)하는 것이 좋습니다. 테넌트가 구성된 방식에 따라 다단계 인증을 설정하라는 메시지가 표시될 수 있습니다. 계속하기 전에 Microsoft Teams 및 Microsoft Outlook에 액세스할 수 있는지 확인합니다.
 

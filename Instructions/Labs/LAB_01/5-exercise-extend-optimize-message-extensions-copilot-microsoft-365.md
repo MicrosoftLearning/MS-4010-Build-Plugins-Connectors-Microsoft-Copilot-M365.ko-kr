@@ -1,14 +1,14 @@
 ---
 lab:
-  title: 연습 4 - Microsoft 365용 Copilot에서 사용할 메시지 확장 및 최적화
-  module: 'LAB 01: Connect Copilot for Microsoft 365 to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+  title: 연습 4 - Microsoft 365 Copilot에서 사용할 메시지 확장 및 최적화
+  module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
 ---
 
-# 연습 4 - Microsoft 365용 Copilot에서 사용할 메시지 확장 및 최적화
+# 연습 4 - Microsoft 365 Copilot에서 사용할 메시지 확장 및 최적화
 
-이 연습에서는 Microsoft 365용 Copilot에서 사용할 메시지 확장을 확장하고 최적화합니다. 대상 그룹이라는 새 매개 변수를 추가하고 여러 매개 변수를 처리하도록 메시지 확장 논리를 업데이트합니다. 마지막으로, 메시지 확장을 실행 및 디버그하고 Microsoft Teams의 Copilot에서 테스트합니다.
+이 연습에서는 Microsoft 365 Copilot에서 사용할 메시지 확장을 확장하고 최적화합니다. 대상 그룹이라는 새 매개 변수를 추가하고 여러 매개 변수를 처리하도록 메시지 확장 논리를 업데이트합니다. 마지막으로, 메시지 확장을 실행 및 디버그하고 Microsoft Teams의 Copilot에서 테스트합니다.
 
-![메시지 확장 플러그 인에서 반환된 정보를 포함하는 Microsoft 365용 Copilot의 답변 스크린샷입니다. 제품 정보를 보여 주는 적응형 카드가 표시됩니다.](../media/5-copilot-answer.png)
+![메시지 확장 플러그 인에서 반환된 정보를 포함하는 Microsoft 365 Copilot의 답변 스크린샷. 제품 정보를 보여 주는 적응형 카드가 표시됩니다.](../media/5-copilot-answer.png)
 
 > [!NOTE]
 > 이 연습에서 Microsoft 365 Copilot 라이선스가 필요한 작업은 작업 5뿐입니다. 테넌트에 Copilot 있는지 여부에 관계없이 이전 작업을 수행해야 합니다.
@@ -212,21 +212,21 @@ Visual Studio에서 다음을 테스트합니다.
 
 1. 플러그 인 목록에서 **Contoso 제품** 플러그 인을 토글하여 사용하도록 설정합니다.
 
-    ![Contoso 제품 플러그 인이 활성화된 Microsoft Teams의 Microsoft 365용 Copilot 스크린샷](../media/20-copilot-plugin-enabled.png)
+    ![Contoso 제품 플러그 인이 활성화된 Microsoft Teams의 Microsoft 365 Copilot 스크린샷.](../media/20-copilot-plugin-enabled.png)
 
 1. **개인을 대상으로 하는 Contoso 제품 찾기**를 메시지로 입력하고 보냅니다.
 
 1. Copilot이 응답할 때까지 기다립니다.
 
-    ![사용자의 요청을 처리하는 동안 표시되는 Copilot 메시지를 보여 주는 Microsoft Teams의 Microsoft 365용 Copilot 스크린샷](../media/21-copilot-thinking.png)
+    ![사용자의 요청을 처리하는 동안 표시되는 Copilot 메시지를 보여 주는 Microsoft Teams의 Microsoft 365 Copilot 스크린샷.](../media/21-copilot-thinking.png)
 
 1. Copilot 응답에서 플러그 인 응답에 반환된 데이터가 표시되고 플러그 인이 응답에서 참조됩니다.
 
-    ![메시지 확장 플러그 인에서 반환된 정보를 포함하는 Microsoft 365용 Copilot의 답변 스크린샷입니다. 제품 정보를 보여 주는 적응형 카드가 표시됩니다.](../media/5-copilot-answer.png)
+    ![메시지 확장 플러그 인에서 반환된 정보를 포함하는 Microsoft 365 Copilot의 답변 스크린샷. 제품 정보를 보여 주는 적응형 카드가 표시됩니다.](../media/5-copilot-answer.png)
 
 1. 결과와 관련된 적응형 카드를 보려면 Copilot 응답의 참조에 마우스를 가져다 댑니다.
 
-    ![제품 정보가 표시된 적응형 카드를 보여 주는 Microsoft Teams의 Microsoft 365용 Copilot 스크린샷 사용자가 Copilot 응답의 참조 위로 마우스를 가져가면 카드가 표시됩니다.](../media/22-copilot-reference.png)
+    ![제품 정보가 표시된 적응형 카드를 보여 주는 Microsoft Teams의 Microsoft 365 Copilot 스크린샷. 사용자가 Copilot 응답의 참조 위로 마우스를 가져가면 카드가 표시됩니다.](../media/22-copilot-reference.png)
 
 Visual Studio로 돌아가서 도구 모음에서 **중지**를 선택하거나 <kbd>Shift</kbd> + <kbd>F5</kbd> 키를 눌러 디버그 세션을 중지합니다. 또한 <kbd>Ctrl</kbd> + <kbd>C</kbd>를 사용하여 개발 프록시를 종료합니다.
 
