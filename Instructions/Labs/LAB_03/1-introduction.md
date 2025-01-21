@@ -1,29 +1,32 @@
 ---
 lab:
   title: 소개
-  module: 'LAB 03: Build your own message extension plugin with TypeScript (TS) for Microsoft Copilot'
+  module: 'LAB 03: Use Adaptive Cards to show data in API plugins for declarative agents'
 ---
 
 # 소개
 
-이 프로젝트에서는 Microsoft 365용 Microsoft Copilot에서 Teams 메시지 확장을 플러그 인으로 사용하는 방법을 알아봅니다. 이 프로젝트는 동일한 [GitHub 리포지토리](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/tree/main/samples/msgext-northwind-inventory-ts)에 포함된 "Northwind 인벤토리" 샘플을 기반으로 합니다. 유서 깊은 [Northwind 데이터베이스](https://learn.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)를 사용하면 많은 시뮬레이션된 엔터프라이즈 데이터를 사용할 수 있습니다.
+작업으로 선언적 에이전트를 확장하면 API를 통해 외부 시스템 및 서비스에 연결할 수 있습니다. 에이전트를 기존 시스템에 연결하면 작업을 자동화하고 자연어를 사용하여 인사이트를 얻을 수 있습니다. 사용자 환경을 개선하기 위해 적응형 카드를 사용하여 에이전트가 API에서 검색하는 정보를 시각적으로 매력적인 방식으로 렌더링할 수 있습니다.
 
-Northwind는 워싱턴 주 스포캔에서 식품 전문 전자상거래 비즈니스를 운영하고 있습니다. 이 랩에서는 제품 인벤토리 및 재무 정보에 대한 액세스를 제공하는 Northwind 인벤토리 애플리케이션으로 작업합니다.
+## 예제 시나리오
 
-이 연습을 완료하는 데 약 **60**분 정도 소요됩니다.
+최근에 로컬 레스토랑의 API와 통합되는 선언적 에이전트를 빌드한 경우를 가정해 보겠습니다. 에이전트를 사용하여 오늘의 메뉴를 찾아보고 자연어를 사용하여 주문할 수 있습니다. 레스토랑의 API는 요리, 재료 및 알레르기 유발 성분의 자세한 목록을 제공합니다. 적응형 카드를 사용하여 요리에 대한 정보를 렌더링하여 에이전트의 응답을 향상하려고 합니다. 또한 적응형 카드를 사용하여 주문 요약을 렌더링하여 주문에 대해 시각적 표현을 제공하려고 합니다. 적응형 카드를 사용하면 이미지, 텍스트 및 단추를 포함하여 정보를 더 매력적으로 만들 수 있습니다.
 
-## 시작하기 전에
+## 이 모듈에서 수행할 작업
 
-- 먼저 개발 환경을 설정하고 애플리케이션을 실행하여 [**준비**](./2-prepare-development-environment.md)합니다.
+이 모듈에서는 선언적 에이전트에 대한 기존 API 플러그 인을 확장하여 적응형 카드를 사용하여 API에서 수신하는 정보를 렌더링합니다. 이 문서에서 학습할 내용은 다음과 같습니다.
 
-- [**연습 1**](./3-exercise-1-run-message-extension.md)에서는 Microsoft Teams 및 Outlook에서 [메시지 확장](https://learn.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions)과 동일한 애플리케이션을 실행합니다.
+- **만들기**: API의 데이터를 표시하는 적응형 카드 템플릿을 만듭니다.
+- **확인**: 적응형 카드 템플릿이 API 데이터를 올바르게 렌더링하는지 확인합니다.
+- **구성**: 적응형 카드 템플릿을 사용하여 데이터를 렌더링하도록 API 플러그 인을 구성합니다.
+- **프로비전**: Microsoft 365 Copilot에 선언적 에이전트를 업로드하고 결과의 유효성을 검사합니다.
 
-- [**연습 2**](./4-exercise-2-run-copilot-plugin.md)에서는 Microsoft 365용 Copilot용 플러그 인으로 애플리케이션을 실행합니다. 다양한 프롬프트로 실험하고 여러 매개 변수를 사용하여 플러그인이 호출되는 방식을 관찰합니다. Copilot와 채팅할 때 개발자 콘솔에서 만들고 있는 쿼리를 볼 수 있습니다.
+![적응형 카드를 사용하여 외부 API의 정보를 사용하여 사용자에게 응답하는 선언적 에이전트의 스크린샷.](../media/LAB_03/1-agent-response-adaptive-card-dish.png)
 
-- [**연습 3**](./5-exercise-3-add-new-command.md)에서는 플러그 인 기능을 확장하고 더 많은 작업을 수행할 수 있도록 애플리케이션에 새 명령을 추가하는 방법을 알아봅니다.
+## 랩 기간
 
-  ![제품을 표시하는 적응형 카드의 스크린샷.](../media/1-00-product-card-only.png)
+- **예상 완료 시간**: 35분
 
-- 마지막으로, [**연습 4**](./6-exercise-4-explore-plugin-source-code.md)에서는 코드 둘러보기를 통해 코드가 어떻게 작동하는지 좀 더 자세히 알아봅니다. 아직 Copilot가 없는 경우 다른 모든 항목은 Microsoft 365의 메시지 확장으로 계속 작동합니다.
+## 학습 목표
 
-시작 준비가 되면 [다음 연습을 계속 진행합니다.](./2-prepare-development-environment.md)
+이 모듈을 마치면 선언적 에이전트와 함께 사용할 적응형 카드 템플릿을 빌드하는 방법을 알 수 있습니다. 템플릿이 데이터를 올바르게 렌더링하고 API 플러그 인을 구성하여 템플릿을 사용하도록 할 수 있습니다.

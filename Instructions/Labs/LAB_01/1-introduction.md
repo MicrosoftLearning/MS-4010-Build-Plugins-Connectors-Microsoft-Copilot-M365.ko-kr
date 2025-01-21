@@ -1,59 +1,43 @@
 ---
 lab:
   title: 소개
-  module: 'LAB 01: Connect Microsoft 365 Copilot to your external data in real-time with message extension plugins built with .NET and Visual Studio'
+  module: 'LAB 01: Build a declarative agent for Microsoft 365 Copilot using Visual Studio Code'
 ---
 
 # 소개
 
-메시지 확장을 사용하면 사용자가 Microsoft Teams 및 Microsoft Outlook의 외부 시스템을 사용하여 작업할 수 있습니다. 사용자는 메시지 확장을 사용하여 데이터를 조회 및 변경하고 메시지 및 이메일에서 이러한 시스템의 정보를 서식 있는 카드로 공유할 수 있습니다.
+선언적 에이전트를 사용하여 Microsoft 365 Copilot을 확장합니다. 사용자 지정 지식을 정의하여 권위 있는 콘텐츠로 질문에 답변할 수 있는 에이전트를 만들 수 있습니다.
 
-현재 조직과 관련된 제품 정보에 액세스하는 데 사용하는 사용자 지정 API가 있다고 가정합니다. Microsoft 365에서 이 정보를 검색하고 공유하려고 합니다. 또한 Microsoft 365 Copilot에서 이 정보를 답변에 사용하려고 합니다.
+## 예제 시나리오
 
-이 모듈에서는 메시지 확장을 만듭니다. 메시지 확장은 봇을 사용하여 Microsoft Teams, Microsoft Outlook 및 Microsoft 365 Copilot과 통신합니다.
+고객 지원팀에서 일한다고 가정해 보겠습니다. 사용자와 팀은 조직에서 고객으로부터 만드는 제품에 대한 쿼리를 처리합니다. 응답 시간을 개선하고 더 나은 환경을 제공하려고 합니다. 제품 사양, 자주하는 질문, 수리, 반품 및 보증 처리 정책을 포함하는 SharePoint Online 사이트의 문서 라이브러리에 문서를 저장합니다. 자연어를 사용하여 이러한 문서의 정보를 쿼리하고 고객 쿼리에 대한 답변을 빠르게 얻을 수 있기를 원합니다.
 
-![Microsoft Teams의 검색 기반 메시지 확장 프로그램에서 반환된 검색 결과의 스크린샷](../media/1-search-results.png)
+## 이 모듈에서 수행할 작업
 
-Microsoft Entra를 통해 사용자를 인증하므로 사용자 대신 API에서 데이터를 반환할 수 있습니다.
+여기서는 Microsoft 365의 문서에 저장된 정보를 사용하여 제품 지원 질문에 대답할 수 있는 선언적 에이전트를 만듭니다.
 
-사용자가 인증하면 메시지 확장 프로그램은 API에서 데이터를 가져와 메시지 및 이메일에 서식 있는 카드로 포함할 수 있는 검색 결과를 반환한 다음 공유합니다.
-
-![Microsoft Teams의 외부 API에서 데이터를 사용하는 검색 결과의 스크린샷](../media/3-search-results-api.png)
-
-![Microsoft Teams의 메시지에 포함된 검색 결과의 스크린샷입니다.](../media/4-adaptive-card.png)
-
-Microsoft 365 Copilot을 플러그 인으로 사용하여 사용자 대신 제품 데이터를 쿼리하고 반환된 데이터를 답변에 사용할 수 있습니다.
-
-![메시지 확장 플러그 인에서 반환된 정보를 포함하는 Microsoft 365 Copilot의 답변 스크린샷. 제품 정보를 보여 주는 적응형 카드가 표시됩니다.](../media/5-copilot-answer.png)
-
-이 모듈을 마치면 C#(.NET에서 실행)으로 작성된 메시지 확장을 만들 수 있습니다. Microsoft Teams, Microsoft Outlook 및 Microsoft 365 Copilot에서 사용할 수 있습니다. 보호된 API 뒤에 있는 데이터를 쿼리하고 결과를 서식 있는 카드로 반환할 수 있습니다.
+- **만들기**: 선언적 에이전트 프로젝트를 만들고 Visual Studio Code에서 Teams 도구 키트를 사용합니다.
+- **사용자 지정 지침**: 사용자 지정 지침을 정의하여 응답을 형성합니다.
+- **사용자 지정 그라운딩**: 그라운딩 데이터를 구성하여 에이전트에 추가 컨텍스트를 추가합니다.
+- **대화 시작**: 새 대화를 시작하기 위한 프롬프트를 정의합니다.
+- **프로비전**: Microsoft 365 Copilot에 선언적 에이전트를 업로드하고 결과의 유효성을 검사합니다.
 
 ## 필수 조건
 
-- C#에 대한 기본 지식
-- Bicep에 대한 기본 지식
-- 인증에 대한 기본 지식
-- Microsoft 365 테넌트에 대한 관리자 액세스
-- Azure 구독에 대한 액세스
-- Microsoft 365 Copilot에 대한 액세스는 선택 사항이며 **연습 4: 작업 5**를 완료하는 데만 필요합니다.
-- [Teams 도구 키트](/microsoftteams/platform/toolkit/toolkit-v4/teams-toolkit-fundamentals-vs)(Microsoft Teams 개발 도구 구성 요소)가 설치된 Visual Studio 2022 17.10
-- [.NET 8.0](https://dotnet.microsoft.com/download/dotnet/8.0)
-- [개발 프록시 0.19.1 이상](https://aka.ms/devproxy)
-
-> [!NOTE]
-> 이 랩에서 Microsoft 365 Copilot 라이선스가 필요한 연습은 **연습 4: 작업 5**뿐입니다. 테넌트에 Copilot이 있는지 여부에 관계없이 해당 시점까지 모든 작업을 수행해야 합니다.
+- Microsoft 365 Copilot의 정의 및 작동 방식에 대한 기본 지식
+- Microsoft 365 Copilot의 선언적 에이전트 정의에 대한 기본 지식
+- Microsoft 365 Copilot을 사용하는 Microsoft 365 테넌트
+- Microsoft Teams에 사용자 지정 앱을 업로드할 수 있는 권한이 있는 계정
+- Microsoft 365 Copilot을 사용하는 Microsoft 365 테넌트에 액세스
+- [Teams 도구 키트](https://marketplace.visualstudio.com/items?itemName=TeamsDevApp.ms-teams-vscode-extension) 확장이 설치된 [Visual Studio Code](https://code.visualstudio.com/)
+- [Node.js v18](https://nodejs.org/en/download/package-manager)
 
 ## 랩 기간
 
-  - **예상 완료 시간**: 150분
+- **예상 완료 시간**: 30분
 
 ## 학습 목표
 
-이 모듈을 마치면 다음을 수행할 수 있습니다.
+이 모듈을 마치면 선언적 에이전트를 만들고 Microsoft 365에 업로드한 다음 Microsoft 365 Copilot에서 사용하여 결과의 유효성을 검사할 수 있습니다.
 
-- 메시지 확장이란 무엇이며 이를 빌드하는 방법을 이해합니다.
-- 메시징 확장을 만듭니다.
-- Single Sign-On을 사용하여 사용자를 인증하고 Microsoft Entra 인증으로 보호되는 사용자 지정 API를 호출하는 방법을 이해합니다.
-- Microsoft 365 Copilot에서 사용할 수 있도록 메시지 확장을 확장하고 최적화하는 방법을 이해합니다.
-
-시작 준비가 되면 [첫 번째 연습을 진행합니다.](./2-exercise-create-a-message-extension.md)
+시작 준비가 되면 [첫 번째 연습을 진행합니다.](./2-exercise-create-declarative-agent.md)
