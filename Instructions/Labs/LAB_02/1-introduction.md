@@ -1,29 +1,34 @@
 ---
 lab:
   title: 소개
-  module: 'LAB 02: Build your own message extension plugin with TypeScript (TS) for Microsoft 365 Copilot'
+  module: 'LAB 02: Build your first action for declarative agents with API plugin by using Visual Studio Code'
 ---
 
 # 소개
 
-이 프로젝트에서는 Microsoft 365 Microsoft Copilot에서 Teams 메시지 확장을 플러그 인으로 사용하는 방법을 알아봅니다. 이 프로젝트는 동일한 [GitHub 리포지토리](https://github.com/OfficeDev/Copilot-for-M365-Plugins-Samples/tree/main/samples/msgext-northwind-inventory-ts)에 포함된 "Northwind 인벤토리" 샘플을 기반으로 합니다. 유서 깊은 [Northwind 데이터베이스](https://learn.microsoft.com/dotnet/framework/data/adonet/sql/linq/downloading-sample-databases)를 사용하면 많은 시뮬레이션된 엔터프라이즈 데이터를 사용할 수 있습니다.
+Microsoft 365 Copilot 에이전트를 사용하면 특정 시나리오에 최적화된 AI 지원 도우미를 만들 수 있습니다. 지침을 사용하여 에이전트의 컨텍스트를 정의하고 음성 톤 또는 응답 방법과 같은 설정을 지정합니다. 에이전트의 기술을 구성하면 외부 시스템과 상호 작용하거나, 시스템 조건에서 특정 동작을 트리거하거나, 사용자 지정 워크플로 논리를 사용할 수 있습니다. 기술의 한 가지 유형은 선언적 에이전트가 데이터를 검색하고 수정하기 위해 API와 통신할 수 있도록 하는 작업입니다.
 
-Northwind는 워싱턴 주 스포캔에서 식품 전문 전자상거래 비즈니스를 운영하고 있습니다. 이 랩에서는 제품 인벤토리 및 재무 정보에 대한 액세스를 제공하는 Northwind 인벤토리 애플리케이션으로 작업합니다.
+![Microsoft 365 Copilot용 선언적 에이전트의 구조를 보여주는 다이어그램입니다.](../media/LAB_02/1-anatomy-declarative-agent.png)
 
-이 연습을 완료하는 데 약 **60**분 정도 소요됩니다.
+## 예제 시나리오
 
-## 시작하기 전에
+현지 레스토랑에서 정기적으로 음식을 주문하는 조직에서 일한다고 가정해 보겠습니다. 이 레스토랑은 인터넷에 게시하는 일일 메뉴로 운영됩니다. 이용 가능한 코스를 빠르게 확인할 수 있을 뿐만 아니라 손님이 있을 경우를 대비해 알레르기 유발 물질도 고려할 수 있어야 합니다. 레스토랑은 API를 통해 메뉴를 노출합니다. 별도의 앱을 빌드하는 대신 Microsoft 365 Copilot에 정보를 통합하여 주문하고 재료를 찾을 수 있는 이용 가능한 요리를 쉽게 찾을 수 있습니다. 자연어를 사용하여 메뉴를 탐색하고 주문을 하려고 합니다.
 
-- 먼저 개발 환경을 설정하고 애플리케이션을 실행하여 [**준비**](./2-prepare-development-environment.md)합니다.
+## 이 모듈에서 수행할 작업
 
-- [**연습 1**](./3-exercise-1-run-message-extension.md)에서는 Microsoft Teams 및 Outlook에서 [메시지 확장](https://learn.microsoft.com/microsoftteams/platform/messaging-extensions/what-are-messaging-extensions)과 동일한 애플리케이션을 실행합니다.
+이 모듈에서는 API 플러그 인을 사용하여 선언적 에이전트에 대한 작업을 빌드합니다. 이 작업을 통해 에이전트는 익명 API를 사용하여 외부 시스템과 상호 작용할 수 있습니다. 이 문서에서 학습할 내용은 다음과 같습니다.
 
-- [**연습 2**](./4-exercise-2-run-copilot-plugin.md)에서는 Microsoft 365 Copilot용 플러그 인으로 애플리케이션을 실행합니다. 다양한 프롬프트로 실험하고 여러 매개 변수를 사용하여 플러그인이 호출되는 방식을 관찰합니다. Copilot와 채팅할 때 개발자 콘솔에서 만들고 있는 쿼리를 볼 수 있습니다.
+- **만들기**: 익명 API에 연결하는 API 플러그 인을 만듭니다.
+- **구성**: API의 데이터를 표시하도록 API 플러그 인을 구성합니다.
+- **확장**: API 플러그 인을 사용하는 작업으로 선언적 에이전트를 확장합니다.
+- **프로비전**: Microsoft 365 Copilot에 선언적 에이전트를 업로드하고 결과의 유효성을 검사합니다.
 
-- [**연습 3**](./5-exercise-3-add-new-command.md)에서는 플러그 인 기능을 확장하고 더 많은 작업을 수행할 수 있도록 애플리케이션에 새 명령을 추가하는 방법을 알아봅니다.
+![외부 API의 정보를 사용하여 사용자에게 응답하는 선언적 에이전트의 스크린샷.](../media/LAB_02/1-agent-response-api-plugin.png)
 
-  ![제품을 표시하는 적응형 카드의 스크린샷.](../media/1-00-product-card-only.png)
+## 랩 기간
 
-- 마지막으로, [**연습 4**](./6-exercise-4-explore-plugin-source-code.md)에서는 코드 둘러보기를 통해 코드가 어떻게 작동하는지 좀 더 자세히 알아봅니다. 아직 Copilot가 없는 경우 다른 모든 항목은 Microsoft 365의 메시지 확장으로 계속 작동합니다.
+- **예상 완료 시간**: 35분
 
-시작 준비가 되면 [다음 연습을 계속 진행합니다.](./2-prepare-development-environment.md)
+## 학습 목표
+
+이 모듈을 마치면 익명 API에 연결된 API 플러그 인과 선언적 에이전트를 통합하여 외부 시스템과 실시간으로 상호 작용할 수 있는 방법을 알게됩니다.
