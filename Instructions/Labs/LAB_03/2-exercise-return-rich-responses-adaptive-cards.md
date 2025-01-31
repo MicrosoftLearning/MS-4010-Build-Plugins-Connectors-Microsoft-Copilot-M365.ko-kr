@@ -16,7 +16,7 @@ lab:
 
 먼저 샘플 프로젝트를 다운로드합니다. 웹 브라우저에서:
 
-1. [https://github.com/microsoft/learn-declarative-agent-api-plugin-adaptive-cards-typescript](https://github.com/microsoft/learn-declarative-agent-api-plugin-adaptive-cards-typescript)로 이동합니다.
+1. [https://github.com/microsoft/learn-declarative-agent-api-plugin-adaptive-cards-typescript](https://github.com/microsoft/learn-declarative-agent-api-plugin-adaptive-cards-typescript)으로 이동합니다.
   1. 단계에 따라 [리포지토리 소스 코드를 컴퓨터에 다운로드](https://docs.github.com/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)합니다.
   1. 다운로드한 ZIP 파일 내용물의 압축을 풀고 **문서 폴더**에 압축을 풉니다.
   1. Visual Studio Code에서 폴더를 엽니다.
@@ -44,7 +44,7 @@ Visual Studio Code:
 1. 계속하기 전에 작업 표시줄의 **확장** 탭에서 **적응형 카드 미리보기** 확장을 검색하여 설치한 다음 적응형 카드의 데이터 파일을 생성합니다.
   1. 키보드에서 <kbd>CTRL</kbd>+<kbd>P</kbd> 키를 눌러 명령 팔레트를 엽니다. `>Adaptive`(을)를 입력하면 적응형 카드 작업과 관련된 명령을 찾을 수 있습니다.
 
-    ![적응형 카드 작업과 관련된 명령을 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_03/LAB_03/3-visual-studio-code-adaptive-card-commands.png)
+    ![적응형 카드 작업과 관련된 명령을 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_03/3-visual-studio-code-adaptive-card-commands.png)
 
   1. 목록에서 **적응형 카드: 새 데이터 파일**을 선택합니다. Visual Studio Code에서 **bicepconfig.json**이라는 새 파일을 만듭니다.
   1. 해당 내용을 요리를 나타내는 데이터로 대체합니다.
@@ -68,7 +68,7 @@ Visual Studio Code:
 1. **dish.json** 파일로 돌아갑니다.
 1. 렌즈에서 **적응형 카드 미리 보기**를 선택합니다.
 
-  ![적응형 카드 미리 보기를 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_03/LAB_03/3-visual-studio-code-adaptive-card-preview.png)
+  ![적응형 카드 미리 보기를 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_03/3-visual-studio-code-adaptive-card-preview.png)
 
   Visual Studio Code는 카드의 미리 보기를 측면에 엽니다. 카드를 편집할 때 변경 내용이 측면에 즉시 표시됩니다.
 
