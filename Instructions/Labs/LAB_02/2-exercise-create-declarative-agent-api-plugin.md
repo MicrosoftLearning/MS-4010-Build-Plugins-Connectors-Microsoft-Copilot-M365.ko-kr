@@ -16,7 +16,7 @@ lab:
 
 먼저 샘플 프로젝트를 다운로드합니다. 웹 브라우저에서:
 
-1. [https://github.com/microsoft/learn-declarative-agent-api-plugin-typescript](https://github.com/microsoft/learn-declarative-agent-api-plugin-typescript)로 이동합니다.
+1. [https://github.com/microsoft/learn-declarative-agent-api-plugin-typescript](https://github.com/microsoft/learn-declarative-agent-api-plugin-typescript)으로 이동합니다.
     1. 단계에 따라 [리포지토리 소스 코드를 컴퓨터에 다운로드](https://docs.github.com/repositories/working-with-files/using-files/downloading-source-code-archives#downloading-source-code-archives-from-the-repository-view)합니다.
     1. 다운로드한 ZIP 파일 내용물의 압축을 풀고 **문서 폴더**에 압축을 풉니다.
     1. Visual Studio Code에서 폴더를 엽니다.
