@@ -59,7 +59,7 @@ Visual Studio Code:
 1. 선언적 에이전트 정보를 업데이트합니다.
     1. **appPackage/declarativeAgent.json** 파일을 엽니다.
     1. **name** 속성 값을 **Il Ristorante**로 업데이트합니다.
-    1. **description** 속성 값을 **Order the most delicious Italian dishes and drinks from the comfort of your desk**로 업데이트합니다.
+    1. **description** 속성의 값을 **Order the most delicious Italian dishes and drinks from the comfort of your desk.** 로 업데이트합니다.
     1. 변경 내용을 저장합니다.
 1. 선언적 에이전트의 지침을 업데이트합니다.
     1. **appPackage/instruction.txt** 파일을 엽니다.
@@ -122,6 +122,7 @@ Visual Studio Code:
     > 서식을 유지하려면 Visual Studio Code로 복사하기 전에 메모장에 복사/붙여넣기 작업을 여러 번 수행해야 할 수 있습니다.
 
     1. 변경 내용을 저장합니다.
+
 1. 사용자가 에이전트를 사용할 수 있는 항목을 이해하도록 돕기 위해 대화 시작자를 추가합니다.
     1. **appPackage/declarativeAgent.json** 파일을 엽니다.
     1. **instructions** 속성 뒤에 **conversation_starters**라는 새 속성을 추가합니다:

@@ -18,7 +18,16 @@ lab:
 
 - **예상 완료 시간**:15분
 
-## 작업 1 - 시작 프로젝트 다운로드
+## 작업 1 - Teams 관리 센터에서 사용자 지정 앱 업로드 사용
+
+Teams 도구 키트를 통해 선언적 에이전트를 Microsoft 365에 업로드하려면 Teams 관리 센터에서 **사용자 지정 앱 업로드**를 사용하도록 설정해야 합니다.
+
+1. Teams 관리 센터에서 Teams 앱 > 앱 설정 정책으로 이동하거나 [앱 설정 정책](https://admin.teams.microsoft.com/policies/app-setup)으로 바로 이동합니다.
+1. 정책 목록에서 **글로벌(조직 전체 기본값)** 을 선택합니다.
+1. **사용자 지정 앱 업로드**를 켭니다.
+1. **저장**을 선택한 다음 **확인**을 선택합니다.
+
+## 작업 2 - 시작 프로젝트 다운로드
 
 먼저 웹 브라우저의 GitHub에서 샘플 프로젝트를 다운로드합니다.
 
@@ -33,7 +42,7 @@ lab:
 
 ![탐색기 보기에서 시작 프로젝트 추가 정보 파일 및 폴더 구조를 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_01/create-complete.png)
 
-## 작업 2 - 선언적 에이전트 매니페스트 검사
+## 작업 3 - 선언적 에이전트 매니페스트 검사
 
 선언적 에이전트 매니페스트 파일을 살펴보겠습니다.
 
@@ -57,13 +66,13 @@ lab:
     You are a declarative agent and were created with Team Toolkit. You should start every response and answer to the user with "Thanks for using Teams Toolkit to create your declarative agent!\n\n" and then answer the questions and help the user.
     ```
 
-## 작업 3 - 선언적 에이전트 매니페스트 업데이트
+## 작업 4 - 선언적 에이전트 매니페스트 업데이트
 
 **name** 및 **description** 속성을 시나리오와 더 연관성이 있도록 업데이트해 보겠습니다.
 
 1. **appPackage** 폴더에서 **declarativeAgent.json** 파일을 엽니다.
-1. **name** 속성 값을 **Product support**로 업데이트합니다.
-1. **description** 속성 값을 **Product support agent that can help answer customer queries about Contoso Electronics products**로 업데이트합니다.
+1. **이름** 속성 값을 **Microsoft 365 지식 전문가**로 업데이트합니다.
+1. **description** 속성 값을 **Microsoft 365에 대한 모든 질문에 답변할 수 있는 Microsoft 365 지식 전문가**로 업데이트합니다.
 1. 변경 내용을 저장합니다.
 
 업데이트된 파일에는 다음과 같은 내용이 포함되어야 합니다.
@@ -72,16 +81,13 @@ lab:
 {
     "$schema": "https://aka.ms/json-schemas/agent/declarative-agent/v1.0/schema.json",
     "version": "v1.0",
-    "name": "Product support",
-    "description": "Product support agent that can help answer customer queries about Contoso Electronics products",
+    "name": "Microsoft 365 Knowledge Expert",
+    "description": "Microsoft 365 Knowledge Expert that can answer any question you have about Microsoft 365",
     "instructions": "$[file('instruction.txt')]"
 }
 ```
 
-## 작업 4 - Microsoft 365에 선언적 에이전트 업로드
-
-> [!IMPORTANT]
-> 시작하기 전에 Visual Studio Code에 Teams 도구 키트 확장이 설치되어 있는지 확인합니다. 마켓플레이스에서 확장을 아직 설치하지 않은 경우 지금 설치합니다.
+## 작업 5 - Microsoft 365에 선언적 에이전트 업로드
 
 다음으로, 선언적 에이전트를 Microsoft 365 테넌트에 업로드합니다.
 
@@ -111,66 +117,29 @@ Visual Studio Code:
 
 **instruction** 속성 값에 **instruction.txt** 파일의 내용이 포함되어 있음을 알 수 있습니다. **declarativeAgent.dev.json** 파일은 **appPackage.dev.zip** 파일에 **manifest.dev.json**, **color.png**, **outline.png** 파일과 함께 포함되어 있습니다. **appPackage.dev.zip** 파일이 Microsoft 365에 업로드됩니다.
 
-## 작업 5 - Microsoft 365 Copilot에서 선언적 에이전트 테스트
+> [!IMPORTANT]
+> Microsoft 365 계정에 로그인한 후 Visual Studio Code에 다음과 같은 경고 또는 오류 메시지가 표시될 수 있습니다. Microsoft Teams에서 사용자 지정 앱 업로드를 방금 사용하도록 설정한 경우 설정이 적용되려면 시간이 걸릴 수 있습니다.  몇 분 기다렸다가 다시 시도하거나 로그아웃했다가 Microsoft 365 계정으로 다시 로그인합니다. 테넌트에 전체 Copilot 라이선스가 없기 때문에 Microsoft 365 Copilot 액세스에 대한 두 번째 메시지가 예상됩니다.
+> 
+> ![Visual Studio Code 경고의 스크린샷.](../media/LAB_01/ttk-login-errors.png)
 
-다음으로 Microsoft 365 Copilot에서 선언적 에이전트를 실행하고 **컨텍스트** 및 **몰입형** 환경 모두에서 기능의 유효성을 검사해 보겠습니다.
+## 작업 6 - Microsoft 365 Copilot Chat에서 선언적 에이전트 테스트
 
-Visual Studio Code:
+다음으로 Microsoft 365 Copilot Chat에서 선언적 에이전트를 실행하고 그 기능을 검증해 보겠습니다.
 
-1. **작업 표시줄**에서 **실행 및 디버그** 보기로 전환합니다.
+1. **작업 표시줄**에서 **Teams 도구 키트** 확장을 엽니다.
 
-    ![Visual Studio Code의 스크린샷. 작업 표시줄의 실행 및 디버그 아이콘이 강조 표시됩니다.](../media/LAB_01/debug-open.png)
+    ![Visual Studio Code의 스크린샷. 작업 표시줄에 Teams 도구 키트 아이콘이 강조 표시됩니다.](../media/LAB_01/teams-toolkit-open.png)
 
-1. 구성의 드롭다운 옆에 있는 **디버깅 시작** 버튼을 선택하거나 <kbd>F5</kbd> 키를 누릅니다. 새 브라우저 창이 시작되고 Microsoft 365 Copilot으로 이동합니다.
+1. **수명 주기** 섹션에서 **게시**를 선택합니다. 각 작업이 완료될 때까지 기다립니다.
 
-    ![실행 및 디버그 보기를 보여주는 Visual Studio Code의 스크린샷. 디버깅 시작 아이콘이 강조 표시됩니다.](../media/LAB_01/debug-start.png)
+1. Microsoft Edge를 열고 [https://www.microsoft365.com/chat](https://www.microsoft365.com/chat)에서 Microsoft 365 Copilot Chat을 찾습니다.
 
-    ![진행 중인 디버그 세션을 보여 주는 Visual Studio Code의 스크린샷.](../media/LAB_01/debug-in-progress.png)
+1. **Microsoft 365 Copilot Chat**에서 오른쪽 상단의 아이콘을 선택하여 Copilot 가로 패널을 확장합니다. 패널에 최근 채팅 및 사용 가능한 에이전트가 표시됩니다.
 
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷.](../media/LAB_01/debug-microsoft-365-copilot.png)
+1. 가로 패널에서 **Microsoft 365 지식 전문가**를 선택하여 몰입형 환경으로 들어가 에이전트와 직접 채팅합니다.
 
-브라우저에서 계속하여 **컨텍스트** 환경을 테스트해 보겠습니다.
-
-1. **Microsoft 365 Copilot**에서 메시지 상자에 <kbd>@</kbd> 기호를 입력합니다. 플라이아웃은 사용 가능한 에이전트 목록과 함께 표시됩니다.
-
-    ![Microsoft 365 Copilot의 에이전트 플라이아웃을 보여 주는 Microsoft Edge의 스크린샷. 제품 지원 에이전트가 강조 표시됩니다.](../media/LAB_01/test-in-context-agent-flyout.png)
-
-1. 플라이아웃에서 **제품 지원**를 선택합니다. 메시지 상자 위의 상태 메시지를 확인합니다. **제품 고객 지원팀과 채팅 중**이 표시되며, 이는 에이전트의 상황에 맞는 환경을 사용하고 있음을 의미합니다.
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. '제품 고객 지원팀과 채팅 중'이라는 상태 메시지가 강조 표시됩니다.](../media/LAB_01/test-in-context-agent.png)
-
-1. 텍스트 상자에 **What can you do?** 를 입력하고 메시지를 제출합니다.
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 텍스트 'What can you do?' 는 메시지 상자에 강조 표시되어 있습니다.](../media/LAB_01/test-in-context-message.png)
-
-1. 응답을 기다. 응답이 텍스트 "Teams 도구 키트를 사용하여 선언적 에이전트를 만들어 주셔서 감사합니다!"로 시작하는 방법을 확인합니다. 앞에서 검토한 지침에 정의된 대로
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 제품 지원 에이전트의 응답이 표시됩니다.](../media/LAB_01/test-in-context-response.png)
-
-1. 상황에 맞는 환경을 종료하려면 상태 메시지에서 X표를 선택합니다. 상태 메시지가 제거되고 더 이상 에이전트와 채팅하지 않음을 나타내는 메시지가 채팅 창에 표시됩니다.
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 에이전트 상태 메시지의 X표 아이콘이 강조 표시됩니다.](../media/LAB_01/test-in-context-exit.png)
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 선언적 에이전트가 응답하지 않음을 확인하는 메시지가 강조 표시됩니다.](../media/LAB_01/test-in-context-exit-confirm.png)
-
-마지막으로 **몰입형** 환경을 테스트해 보겠습니다.
-
-브라우저에서 계속합니다.
-
-1. **Microsoft 365 Copilot**에서 오른쪽 상단의 아이콘을 선택하여 Copilot 가로 패널을 확장합니다. 패널에 최근 채팅 및 사용 가능한 에이전트가 표시됩니다.
+1. 에이전트에게 **What can you do?** 라고 질문하고 프롬프트를 제출합니다.
 
     ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷.  패널을 여는 아이콘과 패널의 제품 지원 에이전트가 강조 표시됩니다.](../media/LAB_01/test-immersive-side-panel.png)
 
-1. 가로 패널에서 **제품 지원**을 선택하여 몰입형 환경으로 들어가 에이전트와 직접 채팅할 수 있습니다. 인터페이스에 두 개의 샘플 프롬프트가 표시됩니다.
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 기본 대화 시작이 강조 표시됩니다.](../media/LAB_01/test-immersive.png)
-
-1. **자세한 정보**라는 제목의 샘플 프롬프트를 선택합니다. 메시지 상자에 **What can you do?** 라는 텍스트가 추가되는 것을 확인할 수 있습니다.
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 자세한 정보 대화 시작 텍스트가 메시지 상자에 강조 표시됩니다.](../media/LAB_01/test-immersive-learn-more.png)
-
-1. 메시지를 보내고 응답을 기다립니다. 응답이 텍스트 "Teams 도구 키트를 사용하여 선언적 에이전트를 만들어 주셔서 감사합니다!"로 시작하는 방법을 확인합니다. 앞에서 검토한 지침에 정의된 대로
-
-    ![Microsoft 365 Copilot을 보여 주는 Microsoft Edge의 스크린샷. 제품 지원 에이전트의 응답이 표시됩니다.](../media/LAB_01/test-immersive-response.png)
-
-마지막으로 브라우저를 닫아 Visual Studio Code에서 디버그 세션을 중지합니다.
+다음 연습을 계속 진행합니다.
